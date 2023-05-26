@@ -17,6 +17,10 @@ const App = () => {
     ).then((instance) => {
       const { documentViewer, annotationManager, Annotations } = instance.Core;
 
+      instance.UI.enableFeatures(['ContentEdit'])
+      const { Core } = instance
+      Core.setCustomFontURL('/webviewer-fonts/')
+
       documentViewer.addEventListener('documentLoaded', () => {
         const rectangleAnnot = new Annotations.RectangleAnnotation({
           PageNumber: 1,
