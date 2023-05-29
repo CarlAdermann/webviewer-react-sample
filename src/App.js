@@ -20,6 +20,7 @@ const App = () => {
       instance.UI.enableFeatures(['ContentEdit'])
       const { Core } = instance
       Core.setCustomFontURL('/webviewer-fonts/')
+      instance.UI.Fonts.addAnnotationFont("Calibri")
 
       documentViewer.addEventListener('documentLoaded', () => {
         const rectangleAnnot = new Annotations.RectangleAnnotation({
